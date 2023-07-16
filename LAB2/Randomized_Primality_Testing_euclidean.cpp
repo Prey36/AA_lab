@@ -4,12 +4,16 @@
 
 using namespace std;
 
-unsigned long long int power(int a, int x, int n) {
-  unsigned long long exp = 1;
-  for (int i = 1; i <= x; i++) {
-    exp = (exp * a) % n;
-  }
-  return exp;
+uint long long power(uint long long a, uint long long k, uint long long n){
+    uint long long res = 1;
+    while(k > 0){
+        if(k % 2 == 1){
+            res = (res * a) % n;
+        }
+        k /= 2;
+        a = (a * a) % n;
+    }
+    return res;
 }
 
 
